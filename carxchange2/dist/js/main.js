@@ -1668,60 +1668,60 @@ $( document ).ready(function() {
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Toyota" id="toyota">
                     <label for="toyota">
-                      <img src="images/toyota.svg" alt="Toyota">
+                      <img src="imgs/toyota.svg" alt="Toyota">
                     </label>
                   </div>
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Nissan" id="nissan">
                     <label for="nissan">
-                      <img src="images/nissan.png" alt="Nissan">
+                      <img src="imgs/nissan.png" alt="Nissan">
                     </label>
                   </div>
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Ford" id="ford">
                     <label for="ford">
-                      <img src="images/ford.png" alt="Ford">
+                      <img src="imgs/ford.png" alt="Ford">
                     </label>
                   </div>
 
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="BMW" id="bmw">
                     <label for="bmw">
-                      <img src="images/bmw.svg" alt="BMW">
+                      <img src="imgs/bmw.svg" alt="BMW">
                     </label>
                   </div>
 
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Honda" id="honda">
                     <label for="honda">
-                      <img src="images/honda.png" alt="Honda">
+                      <img src="imgs/honda.png" alt="Honda">
                     </label>
                   </div>
 
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Mitsubishi" id="mitsubishi">
                     <label for="mitsubishi">
-                      <img src="images/mitsubishi.svg" alt="Mitsubishi">
+                      <img src="imgs/mitsubishi.svg" alt="Mitsubishi">
                     </label>
                   </div>
 
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Volkswagen" id="volkswagen">
                     <label for="volkswagen">
-                      <img src="images/volkswagen.png" alt="Volkswagen">
+                      <img src="imgs/volkswagen.png" alt="Volkswagen">
                     </label>
                   </div>
 
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Audi" id="audi">
                     <label for="audi">
-                      <img src="images/audi.png" alt="Audi">
+                      <img src="imgs/audi.png" alt="Audi">
                     </label>
                   </div>
                   <div class="label-wrapper">
                     <input type="radio" name="car" value="Mercedes" id="mercedes">
                     <label for="mercedes">
-                      <img src="images/mercedes.svg" alt="Mercedes">
+                      <img src="imgs/mercedes.svg" alt="Mercedes">
                     </label>
                   </div>
                   <div class="label-wrapper">
@@ -2987,7 +2987,7 @@ $( document ).ready(function() {
         'Any damage to the roof?': $("input[type='radio'][name='roof-damage']:checked").val(),
       };
       let request = $.ajax({
-        url: "https://hook.us1.make.com/v7hv5cri6342j6ry4lwdgsx2ceg054ep",
+        url: "https://hook.us1.make.com/4gmefdbgrwmzxcyt2n988acf2i1gx3w6",
         type: "post",
         data: data
       });
