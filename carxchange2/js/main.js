@@ -1572,6 +1572,7 @@ $( document ).ready(function() {
   // open make
   if(document.getElementById("other-make")) {
     document.getElementById("other-make").addEventListener('click', function handleClick (event) {
+      document.querySelector(".open-modal").click();
       setTimeout(() => {
         document.getElementById('other-car').click();
       }, 500);
@@ -2986,7 +2987,7 @@ $( document ).ready(function() {
         'Any damage to the roof?': $("input[type='radio'][name='roof-damage']:checked").val(),
       };
       let request = $.ajax({
-        url: "https://hook.us1.make.com/4gmefdbgrwmzxcyt2n988acf2i1gx3w6",
+        url: "https://hook.us1.make.com/v7hv5cri6342j6ry4lwdgsx2ceg054ep",
         type: "post",
         data: data
       });
