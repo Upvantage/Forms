@@ -1550,7 +1550,6 @@ $( document ).ready(function() {
     $("#car-models-list").html('');
     $("[data-id='range-miles'] input").val(15000);
     $("#slot_time").val(-1);
-    $("#datepicker").val('');
     $("#instruction").val('');
     $("#seller_first_name").val('');
     $("#seller_last_name").val('');
