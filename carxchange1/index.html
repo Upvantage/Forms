@@ -1,364 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="carxchange-modal">
-    <div class="modal" id="animatedModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="back-arrow" id="back-arrow">
-              <svg width="20" height="17" viewBox="0 0 20 17"
-                fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 9.74794H4.15771L9.90659 15.4711L8.3708 17L0 8.66667L8.3708 0.333334L9.90659 1.86225L4.15771 7.5854H20V9.74794Z"
-                  fill="#6C6C6C"></path>
-              </svg>
-            </button>
-            <h5 class="modal-title" id="modalLabel">Sell My Car</h5>
-            <span class="cross-icon btn-close close-animatedModal" data-dismiss="modal">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M1.11394 0L0 1.11804L3.89238 5L0 8.88196L1.11394 10L5.00617 6.11789L8.8984 10L10 8.88196L6.11995 5L10 1.11804L8.8984 0L5.00617 3.88211L1.11394 0Z"
-                  fill="#040404"></path>
-              </svg>
-            </span>
-          </div>
-          <div class="modal-body">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-            <div class="container">
-              <div class="col-holder">
-                <div class="v-list">
-                  <div class="item active fade-item">
-                    <label>Make</label>
-                    <span>Not specified</span>
-                  </div>
-                  <div class="item">
-                    <label>Model</label>
-                    <span>Not specified</span>
-                  </div>
-                  <div class="item">
-                    <label>Year</label>
-                    <span>Not specified</span>
-                  </div>
-                  <div class="item">
-                    <label>Specs</label>
-                    <span>Not specified</span>
-                  </div>
-                  <div class="item">
-                    <label>City</label>
-                    <span>Not specified</span>
-                  </div>
-                  <div class="item">
-                    <label>Mileage & Price</label>
-                    <span>Not specified</span>
-                  </div>
-                  <div class="item">
-                    <label>Schedule Appointment</label>
-                    <span>Not specified</span>
-                  </div>
-                </div>
-                <div class="tab-content">
-                  <div class="slide active" id="slide-make">
-                    <div class="slide-header">
-                      <h5>Select your car make</h5>
-                      <div class="search-field">
-                        <input id="search-car" type="search" placeholder="Search for car make">
-                        <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
-                          <title id="title">Search Icon</title>
-                          <desc id="desc">A magnifying glass icon.</desc>
-                          <g class="search-path" fill="none" stroke="#848F91">
-                            <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-                            <circle cx="8" cy="8" r="7" />
-                          </g>
-                        </svg>
-                        <ul class="makes-drop-down" id="search-car-dropdown"></ul>
-                      </div>
-                    </div>
-                    <div class="car-makes radio-wrapper" id="cars-list">
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Toyota" id="toyota">
-                        <label for="toyota">
-                          <img src="dist/imgs/toyota.svg" alt="Toyota">
-                        </label>
-                      </div>
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Nissan" id="nissan">
-                        <label for="nissan">
-                          <img src="dist/imgs/nissan.png" alt="Nissan">
-                        </label>
-                      </div>
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Ford" id="ford">
-                        <label for="ford">
-                          <img src="dist/imgs/ford.png" alt="Ford">
-                        </label>
-                      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="dist/css/main.css">
+  <title>Sell Any Car in UAE - Sell My Car for More on CarSwitch</title>
+</head>
 
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="BMW" id="bmw">
-                        <label for="bmw">
-                          <img src="dist/imgs/bmw.svg" alt="BMW">
-                        </label>
-                      </div>
-
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Honda" id="honda">
-                        <label for="honda">
-                          <img src="dist/imgs/honda.png" alt="Honda">
-                        </label>
-                      </div>
-
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Mitsubishi" id="mitsubishi">
-                        <label for="mitsubishi">
-                          <img src="dist/imgs/mitsubishi.svg" alt="Mitsubishi">
-                        </label>
-                      </div>
-
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Volkswagen" id="volkswagen">
-                        <label for="volkswagen">
-                          <img src="dist/imgs/volkswagen.png" alt="Volkswagen">
-                        </label>
-                      </div>
-
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Audi" id="audi">
-                        <label for="audi">
-                          <img src="https://github.com/Upvantage/CarsXchange/blob/main/forms/carxchange1/dist/imgs/audi.png?raw=true" alt="Audi">
-                        </label>
-                      </div>
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="Mercedes" id="mercedes">
-                        <label for="mercedes">
-                          <img src="dist/imgs/mercedes.svg" alt="Mercedes">
-                        </label>
-                      </div>
-                      <div class="label-wrapper">
-                        <input type="radio" name="car" value="other-car" id="other-car" class="other-car">
-                        <label for="other-car">
-                          <span class="text">Other make</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slide" id="slide-model">
-                    <div class="slide-header">
-                      <h5>Choose from popular models</h5>
-                      <div class="search-field">
-                        <input id="search-model" type="search" placeholder="Search for car model">
-                        <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
-                          <title id="title">Search Icon</title>
-                          <desc id="desc">A magnifying glass icon.</desc>
-                          <g class="search-path" fill="none" stroke="#848F91">
-                            <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-                            <circle cx="8" cy="8" r="7" />
-                          </g>
-                        </svg>
-                        <ul class="makes-drop-down" id="search-model-dropdown"></ul>
-                      </div>
-                    </div>
-                    <div class="car-makes radio-wrapper" id="car-models-list"></div>
-                  </div>
-                  <div class="slide" id="slide-year">
-                    <div class="slide-header">
-                      <h5>Select year</h5>
-                    </div>
-                    <div class="car-makes radio-wrapper" id="car-years-list"></div>
-                  </div>
-                  <div class="slide" id="slide-specs">
-                    <div class="slide-header">
-                      <h5>Select specifications</h5>
-                    </div>
-                    <div class="car-makes radio-wrapper" id="car-specs-list"></div>
-                  </div>
-                  <div class="slide" id="slide-city">
-                    <div class="slide-header">
-                      <h5>Which city is the car in?</h5>
-                    </div>
-                    <div class="car-makes radio-wrapper" id="cities-list"></div>
-                  </div>
-                  <div class="slide" id="slide-mileage">
-                    <form class="mileage-price" onsubmit="return false">
-                      <div class="block">
-                        <div class="slider-holder">
-                          <div class="title-row">
-                            <span>Mileage (approx)</span>
-                            <span id="range-miles">25,000 Kilometers</span>
-                          </div>
-                          <div class="range-slider" data-id="range-miles">
-                            <input class="range-slider__range" type="range" value="25000" min="0" max="350000"
-                              step="1000">
-                          </div>
-                          <div class="labels-holder">
-                            <span id="mileage-min-label" data-label="0 Kilometer" data-label-sm="0 Kilometer"></span>
-                            <span id="mileage-max-label" data-label="350,000 Kilometers" data-label-sm="+350k Kilometers"></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="block">
-                        <div class="slider-holder">
-                          <div class="title-row">
-                            <span>Set your price</span>
-                            <span id="range-price">AED 70,000</span>
-                          </div>
-                          <div class="range-slider" data-id="range-price">
-                            <input class="range-slider__range" type="range" value="70000" min="1000" max="200000"
-                              step="500">
-                          </div>
-                          <div class="labels-holder">
-                            <span id="mileage-min-label" data-label="AED 1000" data-label-sm="AED 1000"></span>
-                            <span id="mileage-max-label" data-label="AED 200,000" data-label-sm="+215k miles"></span>
-                          </div>
-                        </div>
-                        <div class="range-full-alert" id="range-full-alert">
-                          <h6>Set your price</h6>
-                          <div class="input-holder mb-3" data-icon="">
-                            <input type="number" class="form-control" name="exact-price" id="exact-price" value="200000"
-                              required="" placeholder="Price" min="1000" step="500">
-                            <div class="icon">
-                              <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M7.81065 0L7.60725 0.183062L0.447485 7.34282L0 7.81065L0.447485 8.27848L6.30547 14.1365L6.7733 14.5839L7.24112 14.1365L14.4009 6.9767L14.5839 6.7733V0H7.81065ZM8.35984 1.30178H13.2822V6.22411L6.7733 12.733L1.85096 7.81065L8.35984 1.30178ZM15.2348 1.95266V3.25444H15.8857V8.56324L9.70229 14.706L8.88868 13.8924L7.97337 14.8077L9.23447 16.0891L9.70229 16.5366L10.1498 16.0891L17.0044 9.31583L17.1875 9.11243V1.95266H15.2348ZM11.3295 2.60355C10.971 2.60355 10.6786 2.89594 10.6786 3.25444C10.6786 3.61293 10.971 3.90533 11.3295 3.90533C11.688 3.90533 11.9804 3.61293 11.9804 3.25444C11.9804 2.89594 11.688 2.60355 11.3295 2.60355Z"
-                                  fill="#808080"></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-center">
-                        <button id="continue-button" type="button">
-                          Continue
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="slide" id="slide-appointment">
-                    <div class="seller-info-holder">
-                      <h5>When should we inspect the car?</h5>
-                      <div class="grid-holder">
-                        <div class="item">
-                          <label class="control-label">Pick a date &amp; time</label>
-                          <div class="grid-holder" grid-item-width-sm="1/2">
-                            <div class="input-holder">
-                              <input type="text" required="required" placeholder="MM-DD-YYYY" id="datepicker" autocomplete="off"/>
-                            </div>
-                            <div class="input-holder">
-                              <select class="form-control" id="slot_time">
-                                <option value="-1" selected="" disabled="">Time</option>
-                                <option value="1">09 am - 10 am</option>
-                                <option value="2">11 am - 12 pm</option>
-                                <option value="3">1 pm - 2 pm</option>
-                                <option value="4">3 pm - 4 pm</option>
-                                <option value="5">5 pm - 6 pm</option>
-                              </select>
-                              <svg class="icon" width="16" height="10" viewBox="0 0 16 10" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.60039 1.79994L8.00039 8.19994L14.4004 1.79994" stroke="#102A43"
-                                  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <label class="control-label">Select area in <span id="selected-city"></span></label>
-                          <div class="input-holder dd-holder city-field">
-                            <svg class="location-icon" width="18" height="22" viewBox="0 0 18 22" fill="#495057"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M8.99972 0.928511C13.6154 0.928511 17.3569 4.66994 17.3569 9.28565C17.3569 12.8171 14.8754 16.6657 9.97686 20.8725C9.70448 21.1065 9.3572 21.235 8.99812 21.2347C8.63903 21.2344 8.29198 21.1053 8.02001 20.8708L7.69601 20.5897C3.01429 16.4925 0.642578 12.7382 0.642578 9.28565C0.642578 4.66994 4.38401 0.928511 8.99972 0.928511ZM8.99972 2.21422C7.12426 2.21422 5.32562 2.95925 3.99947 4.2854C2.67332 5.61155 1.92829 7.41019 1.92829 9.28565C1.92829 12.2874 4.11229 15.7459 8.54029 19.6202L8.86001 19.8971C8.89888 19.9305 8.94845 19.9489 8.99972 19.9489C9.05099 19.9489 9.10056 19.9305 9.13944 19.8971C13.7817 15.9097 16.0712 12.3585 16.0712 9.28565C16.0712 8.35702 15.8882 7.43748 15.5329 6.57954C15.1775 5.72159 14.6566 4.94204 14 4.2854C13.3433 3.62876 12.5638 3.10788 11.7058 2.75251C10.8479 2.39713 9.92836 2.21422 8.99972 2.21422ZM8.99972 6.07137C9.8522 6.07137 10.6698 6.41001 11.2726 7.01281C11.8754 7.61561 12.214 8.43317 12.214 9.28565C12.214 10.1381 11.8754 10.9557 11.2726 11.5585C10.6698 12.1613 9.8522 12.4999 8.99972 12.4999C8.14724 12.4999 7.32967 12.1613 6.72688 11.5585C6.12408 10.9557 5.78544 10.1381 5.78544 9.28565C5.78544 8.43317 6.12408 7.61561 6.72688 7.01281C7.32967 6.41001 8.14724 6.07137 8.99972 6.07137ZM8.99972 7.35708C8.48823 7.35708 7.99769 7.56027 7.63602 7.92195C7.27434 8.28363 7.07115 8.77416 7.07115 9.28565C7.07115 9.79714 7.27434 10.2877 7.63602 10.6494C7.99769 11.011 8.48823 11.2142 8.99972 11.2142C9.51121 11.2142 10.0017 11.011 10.3634 10.6494C10.7251 10.2877 10.9283 9.79714 10.9283 9.28565C10.9283 8.77416 10.7251 8.28363 10.3634 7.92195C10.0017 7.56027 9.51121 7.35708 8.99972 7.35708Z"
-                                ill="#727272"></path>
-                            </svg>
-
-                            <div class="autoComplete_wrapper" role="combobox" aria-owns="dropdown-locations"
-                              aria-haspopup="true" aria-expanded="false">
-                              <input class="form-control" id="city-area" type="text" spellcheck="false"
-                                autocorrect="off" autocomplete="off" autocapitalize="off"
-                                aria-controls="dropdown-locations" aria-autocomplete="both" placeholder="Select area"
-                                aria-activedescendant="">
-                              <ul id="dropdown-locations" role="listbox" data-placeholder="Select a location"
-                                hidden=""></ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <label class="control-label">Building name / Instructions</label>
-                          <div class="input-holder">
-                            <textarea id="instruction" class="form-control"
-                              placeholder="Help us reach you quicker"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <button id="appointment_info" type="button" disabled="disabled" class="continue-button">
-                        Continue
-                      </button>
-                    </div>
-                  </div>
-                  <div class="slide" id="slide-contact">
-                    <div class="seller-info-holder">
-                      <h5 id="ShareContactInfo">Please share your contact info</h5>
-                      <div class="grid-holder" data-item-gap="25">
-                        <div class="item">
-                          <label class="control-label">Name</label>
-                          <div class="input-holder" data-icon="">
-                            <input class="form-control" placeholder="Enter Name" id="seller_name">
-                            <div class="icon">
-                              <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M8 0.749939C5.1084 0.749939 2.75 3.10834 2.75 5.99994C2.75 7.80756 3.67285 9.41302 5.07031 10.3593C2.39551 11.5078 0.5 14.162 0.5 17.2499H2C2 15.082 3.14551 13.1953 4.85938 12.1406C5.36328 13.3769 6.59082 14.2499 8 14.2499C9.40918 14.2499 10.6367 13.3769 11.1406 12.1406C12.8545 13.1953 14 15.082 14 17.2499H15.5C15.5 14.162 13.6045 11.5078 10.9297 10.3593C12.3271 9.41302 13.25 7.80756 13.25 5.99994C13.25 3.10834 10.8916 0.749939 8 0.749939ZM8 2.24994C10.0801 2.24994 11.75 3.91986 11.75 5.99994C11.75 8.08002 10.0801 9.74994 8 9.74994C5.91992 9.74994 4.25 8.08002 4.25 5.99994C4.25 3.91986 5.91992 2.24994 8 2.24994ZM8 11.2499C8.61523 11.2499 9.20117 11.3378 9.75781 11.5078C9.49707 12.2314 8.81738 12.7499 8 12.7499C7.18262 12.7499 6.50293 12.2314 6.24219 11.5078C6.79883 11.3378 7.38477 11.2499 8 11.2499Z"
-                                  fill="#7990A6"></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <label class="control-label">Phone</label>
-                          <div class="input-holder phone-holder" data-icon="" data-tel="+971">
-                            <input type="tel" required="" class="phoneNumber" placeholder="Phone" id="phoneNumber" maxlength="9">
-                            <div class="icon">
-                              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M4.41022 0.874939C4.08307 0.874939 3.76081 0.992126 3.49225 1.20697L3.45319 1.2265L3.43366 1.24603L1.48053 3.25775L1.50006 3.27728C0.897037 3.83392 0.71149 4.66644 0.972721 5.38666C0.975162 5.39154 0.970279 5.40131 0.972721 5.40619C1.50251 6.9223 2.85749 9.84955 5.50397 12.496C8.16022 15.1523 11.1265 16.4536 12.5938 17.0273H12.6133C13.3726 17.2812 14.1954 17.1005 14.7813 16.5976L16.754 14.6249C17.2715 14.1074 17.2715 13.2089 16.754 12.6913L14.2149 10.1523L14.1954 10.1132C13.6778 9.59564 12.7598 9.59564 12.2423 10.1132L10.9923 11.3632C10.5406 11.1459 9.46393 10.5893 8.43366 9.60541C7.41071 8.62885 6.88825 7.5058 6.69538 7.06635L7.94538 5.81635C8.47028 5.29144 8.48004 4.41742 7.92585 3.90228L7.94538 3.88275L7.88678 3.82416L5.38678 1.24603L5.36725 1.2265L5.32819 1.20697C5.05963 0.992126 4.73737 0.874939 4.41022 0.874939ZM4.41022 2.12494C4.45661 2.12494 4.50299 2.14691 4.54694 2.18353L7.04694 4.74213L7.10553 4.80072C7.10065 4.79584 7.14215 4.86176 7.06647 4.93744L5.50397 6.49994L5.211 6.77338L5.34772 7.164C5.34772 7.164 6.06549 9.08539 7.57428 10.5234L7.711 10.6406C9.16364 11.9662 10.8751 12.6913 10.8751 12.6913L11.2657 12.8671L13.1212 11.0117C13.2286 10.9042 13.209 10.9042 13.3165 11.0117L15.8751 13.5703C15.9825 13.6777 15.9825 13.6386 15.8751 13.746L13.961 15.6601C13.6729 15.9067 13.3677 15.9579 13.004 15.8359C11.588 15.2792 8.83649 14.0707 6.38288 11.6171C3.90973 9.14398 2.61823 6.33881 2.1446 4.9765C2.04938 4.7226 2.11774 4.34662 2.33991 4.15619L2.37897 4.11713L4.2735 2.18353C4.31745 2.14691 4.36383 2.12494 4.41022 2.12494Z"
-                                  fill="#7990A6"></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <p>Please give us your phone number so we can arrange a specialist visit for inspection &amp;
-                          photos. </p>
-                      </div>
-                      <button id="schedule_inspection" type="button" disabled="disabled">Schedule Car
-                        Inspection</button>
-                    </div>
-                  </div>
-                  <div class="slide slide-last slide-thanks" id="slide-thanks">
-                    <div class="main-content" style="max-height: 200px;overflow:hidden">
-                      <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_atippmse.json" 
-                      background="transparent" speed="2" style="width: 200px; height: 200px;margin: auto;"></lottie-player>
-                    </div>
-                    <div class="header">
-                      <h2>THANK YOU!</h2>
-                    </div>
-                    <p class="main-content__body">For contacting us. <br> will be get back to you soon.</p>
-                  </div>
-                </div>
-              </div>
-              <span class="cross-icon btn-close close-animatedModal">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M1.55951 0L0 1.56526L5.44934 7L0 12.4347L1.55951 14L7.00864 8.56504L12.4578 14L14 12.4347L8.56793 7L14 1.56526L12.4578 0L7.00864 5.43496L1.55951 0Z"
-                    fill="#040404"></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div style='padding: 0;margin: 0px;font-family: Poppins, sans-serif;'>
+  <nav class="navbar" style="background-color: rgb(248,249,250);padding: 0px;margin:0;height:80px"></nav>
+  <a href="#animatedModal" class="btn open-modal" style="margin: 100px auto;max-width: 300px;">
+    Launch demo modal
+  </a>
+  <div style="display: flex; justify-content: center;align-items: center;flex-direction: column;gap: 16px">
+    <a class="btn open-modal-car" data-id="bmw">BMW</a>
+    <a class="btn open-modal-car" data-id="audi">Audi</a>
+    <a class="btn open-modal-car" data-id="nissan">Nissan</a>
+    <a class="btn open-modal-car" data-id="honda">Honda</a>
+    <a class="btn open-modal-car" data-id="volkswagen">Volkswagen</a>
+    <a class="btn open-modal-car" data-id="mercedes">Mercedes</a>
+    <a class="btn open-modal-car" data-id="ford">Ford</a>
+    <a class="btn open-modal-car" data-id="toyota">Toyota</a>
   </div>
+  <div class="carxchange-modal"></div>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animatedmodal@1.0.0/animatedModal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="dist/js/main.js"></script>
+</body>
+
+</html>
