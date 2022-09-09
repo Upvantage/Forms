@@ -2754,13 +2754,7 @@ $( document ).ready(function() {
     let currentSlide = $(".slide.active"),
       currentSlideIndex = $(".slide.active").index(),
     selectedSlideIndex = $(this).index(),
-    selectedSlide = $(".slide").eq(selectedSlideIndex),
-    prevSlide = currentSlideIndex > 0 ? $(".slide.active").prev() : null;
-    if(prevSlide.index() == 0) {
-      $("#back-arrow").css('visibility', 'hidden');
-    } else {
-      $("#back-arrow").css('visibility', 'visible');
-    }
+    selectedSlide = $(".slide").eq(selectedSlideIndex);
 
     if(selectedSlideIndex == currentSlideIndex) {
       return;
