@@ -2798,10 +2798,10 @@ $( document ).ready(function() {
     selectedSlideIndex = $(this).index(),
     selectedSlide = $(".slide").eq(selectedSlideIndex),
     prevSlide = $(".slide.active").prev().index();
-    if(prevSlide.index() <= 0) {
-      $("#back-arrow").css('visibility', 'hidden');
+    if(prevSlide <= 0) {
+      $(".back-arrow").css('visibility', 'hidden');
     } else {
-      $("#back-arrow").css('visibility', 'visible');
+      $(".back-arrow").css('visibility', 'visible');
     }
     if(selectedSlideIndex == currentSlideIndex) {
       return;
