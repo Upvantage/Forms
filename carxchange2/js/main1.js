@@ -2602,7 +2602,10 @@ $( document ).ready(function() {
   
   $(".open-modal[href='#animatedModal']").animatedModal({
     color: '#fff',
-    animationDuration: '.35s'
+    animationDuration: '.35s',
+    beforeOpen: function() {
+      $("body").css("overflow", "unset");
+    },
   });
   // close modal
   $("body").on("click", ".btn-close", function(){
