@@ -2062,66 +2062,66 @@ $( document ).ready(function() {
             <div class="slide-body">
               <div class="radio-wrapper" id="cars-list">
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Toyota" id="toyota">
+                  <input type="radio" name="car" value="Toyota" id="toyota">
                   <label for="toyota">
-                    <img src="dist/imgs/toyota.svg" alt="Toyota">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba85b7af0c24e838e1af7_toyota.svg" alt="Toyota">
                   </label>
                 </div>
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Nissan" id="nissan">
+                  <input type="radio" name="car" value="Nissan" id="nissan">
                   <label for="nissan">
-                    <img src="dist/imgs/nissan.png" alt="Nissan">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba85b9780f07322ed699b_nissan.png" alt="Nissan">
                   </label>
                 </div>
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Ford" id="ford">
+                  <input type="radio" name="car" value="Ford" id="ford">
                   <label for="ford">
-                    <img src="dist/imgs/ford.png" alt="Ford">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba85859e5171ba246737e_ford.png" alt="Ford">
                   </label>
                 </div>
 
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="BMW" id="bmw">
+                  <input type="radio" name="car" value="BMW" id="bmw">
                   <label for="bmw">
-                    <img src="dist/imgs/bmw.svg" alt="BMW">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba83d7af0c2d6648e1a19_bmw.svg" alt="BMW">
                   </label>
                 </div>
 
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Honda" id="honda">
+                  <input type="radio" name="car" value="Honda" id="honda">
                   <label for="honda">
-                    <img src="dist/imgs/honda.png" alt="Honda">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba859b5384651e6809d17_honda.png" alt="Honda">
                   </label>
                 </div>
 
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Mitsubishi" id="mitsubishi">
+                  <input type="radio" name="car" value="Mitsubishi" id="mitsubishi">
                   <label for="mitsubishi">
-                    <img src="dist/imgs/mitsubishi.svg" alt="Mitsubishi">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba859d0acde618349d0bd_mitsubishi.svg" alt="Mitsubishi">
                   </label>
                 </div>
 
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Volkswagen" id="volkswagen">
+                  <input type="radio" name="car" value="Volkswagen" id="volkswagen">
                   <label for="volkswagen">
-                    <img src="dist/imgs/volkswagen.png" alt="Volkswagen">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba85c64db4615200dbb03_volkswagen.png" alt="Volkswagen">
                   </label>
                 </div>
 
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Audi" id="audi">
+                  <input type="radio" name="car" value="Audi" id="audi">
                   <label for="audi">
-                    <img src="dist/imgs/audi.png" alt="Audi">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba859bcd59c7efd0042be_audi.png" alt="Audi">
                   </label>
                 </div>
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="Mercedes" id="mercedes">
+                  <input type="radio" name="car" value="Mercedes" id="mercedes">
                   <label for="mercedes">
-                    <img src="dist/imgs/mercedes.svg" alt="Mercedes">
+                    <img src="https://uploads-ssl.webflow.com/62e009597a529f39f7c5a2a6/631ba858d3f8df5b7b189b6f_mercedes.svg" alt="Mercedes">
                   </label>
                 </div>
                 <div class="label-wrapper">
-                  <input required type="radio" name="car" value="other-car" id="other-car" class="other-car">
+                  <input type="radio" name="car" value="other-car" id="other-car" class="other-car">
                   <label for="other-car">
                     <span class="text">Other make</span>
                   </label>
