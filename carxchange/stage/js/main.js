@@ -2026,7 +2026,328 @@ $( document ).ready(function() {
   current_fs, next_fs, previous_fs,
   left, opacity, scale,
   animating = false;
+  $("#carxchange").html(`
+    <div class="container">
+      <div class="tab-content">
+        <div class="progress-wrapper w-100 mb-4">
+          <div class="progress-info d-flex align-items-center justify-content-between" data-val="0">
+            <button class="btn p-0 back" id="btn-back">
+              <svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" baseProfile="tiny" id="Layer_1" x="0px" y="0px" width="42px" height="42px" viewBox="0 0 42 42" xml:space="preserve">
+                <polygon fill-rule="evenodd" points="27.066,1 7,21.068 26.568,40.637 31.502,35.704 16.865,21.068 32,5.933 "/>
+              </svg> Back
+            </button>
+          </div>
+          <div class="progress" style="height: 8px;">
+            <div class="progress-bar" role="progressbar" aria-label="Progress Bar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="slide-wrapper w-100">
+          <div class="slide slide-first active" id="slide-make">
+            <div class="slide-header">
+              <h5>Select your car make</h5>
+              <div class="search-field">
+                <input id="search-car" type="search" placeholder="Search for car make">
+                <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+                  <title id="title">Search Icon</title>
+                  <desc id="desc">A magnifying glass icon.</desc>
+                  <g class="search-path" fill="none" stroke="#848F91">
+                    <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+                    <circle cx="8" cy="8" r="7" />
+                  </g>
+                </svg>
+                <ul class="makes-drop-down" id="search-car-dropdown"></ul>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="radio-wrapper" id="cars-list">
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Toyota" id="toyota">
+                  <label for="toyota">
+                    <img src="dist/imgs/toyota.svg" alt="Toyota">
+                  </label>
+                </div>
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Nissan" id="nissan">
+                  <label for="nissan">
+                    <img src="dist/imgs/nissan.png" alt="Nissan">
+                  </label>
+                </div>
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Ford" id="ford">
+                  <label for="ford">
+                    <img src="dist/imgs/ford.png" alt="Ford">
+                  </label>
+                </div>
 
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="BMW" id="bmw">
+                  <label for="bmw">
+                    <img src="dist/imgs/bmw.svg" alt="BMW">
+                  </label>
+                </div>
+
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Honda" id="honda">
+                  <label for="honda">
+                    <img src="dist/imgs/honda.png" alt="Honda">
+                  </label>
+                </div>
+
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Mitsubishi" id="mitsubishi">
+                  <label for="mitsubishi">
+                    <img src="dist/imgs/mitsubishi.svg" alt="Mitsubishi">
+                  </label>
+                </div>
+
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Volkswagen" id="volkswagen">
+                  <label for="volkswagen">
+                    <img src="dist/imgs/volkswagen.png" alt="Volkswagen">
+                  </label>
+                </div>
+
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Audi" id="audi">
+                  <label for="audi">
+                    <img src="dist/imgs/audi.png" alt="Audi">
+                  </label>
+                </div>
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="Mercedes" id="mercedes">
+                  <label for="mercedes">
+                    <img src="dist/imgs/mercedes.svg" alt="Mercedes">
+                  </label>
+                </div>
+                <div class="label-wrapper">
+                  <input required type="radio" name="car" value="other-car" id="other-car" class="other-car">
+                  <label for="other-car">
+                    <span class="text">Other make</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide" id="slide-model">
+            <div class="slide-header">
+              <h5>Choose from popular models</h5>
+              <div class="search-field">
+                <input id="search-model" type="search" placeholder="Search for car model">
+                <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+                  <title id="title">Search Icon</title>
+                  <desc id="desc">A magnifying glass icon.</desc>
+                  <g class="search-path" fill="none" stroke="#848F91">
+                    <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+                    <circle cx="8" cy="8" r="7" />
+                  </g>
+                </svg>
+                <ul class="makes-drop-down" id="search-model-dropdown"></ul>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="radio-wrapper" id="car-models-list"></div>
+            </div>
+          </div>
+          <div class="slide" id="slide-year">
+            <div class="slide-header">
+              <h5>Select year</h5>
+            </div>
+            <div class="radio-wrapper" id="car-years-list"></div>
+          </div>
+          <div class="slide" id="slide-specs">
+            <div class="slide-header">
+              <h5>Select specifications</h5>
+            </div>
+            <div class="radio-wrapper radio-column" id="car-specs-list"></div>
+          </div>
+          <div class="slide" id="slide-city">
+            <div class="slide-header">
+              <h5>Which city is the car in?</h5>
+            </div>
+            <div class="radio-wrapper radio-column" id="cities-list"></div>
+          </div>
+          <div class="slide slide-mileage" id="slide-mileage">
+            <div class="slider-holder mb-5 py-4">
+              <div class="title-row">
+                <span>Mileage (approx)</span>
+                <span id="range-miles">25,000 Kilometers</span>
+              </div>
+              <div class="range-slider" data-id="range-miles">
+                <input class="range-slider__range" type="range" value="25000" min="0" max="350000"
+                  step="1000">
+              </div>
+              <div class="labels-holder">
+                <span id="mileage-min-label" data-label="0 Kilometer" data-label-sm="0 Kilometer"></span>
+                <span id="mileage-max-label" data-label="350,000 Kilometers" data-label-sm="+350k Kilometers"></span>
+              </div>
+            </div>
+            <div class="col-auto mx-auto">
+              <button id="continue-button" type="button" class="btn btn-primary btn-continue px-5 py-2">
+                Continue
+              </button>
+            </div>
+          </div>
+          <div class="slide" id="slide-paints">
+            <div class="slide-header">
+              <h5>Select paint</h5>
+            </div>
+            <div class="radio-wrapper radio-column" id="car-paints-list"></div>
+          </div>
+          <div class="slide slide-appointment" id="slide-appointment">
+            <div class="slide-header">
+              <h5>When should we inspect the car?</h5>
+            </div>
+            <div class="radio-wrapper no-radio" id="visit-type">
+              <div class="label-wrapper">
+                <input type="radio" name="visit-type" value="branch" id="branch" class="visit-type-model" checked>
+                <label for="branch">
+                  <h5>Branches</h5>
+                  <span>Dubai</span>
+                </label>
+              </div>
+              <div class="label-wrapper">
+                <input type="radio" name="visit-type" value="home-service" id="home-service" class="visit-type-model">
+                <label for="home-service">
+                  <h5>Home Service</h5>
+                  <span>Come to my location</span>
+                </label>
+              </div>
+            </div>
+            <form class="needs-validation row g-3 mt-2" novalidate onsubmit="return false">
+              <div class="col-md-6">
+                <label class="form-label" for="datepicker">Pick a date &amp; time</label>
+                <input type="text" required="required" placeholder="MM-DD-YYYY" id="datepicker" autocomplete="off" class="form-control"/>
+              </div>
+              <div class="col-md-6 align-self-end">
+                <select class="form-control" id="slot_time" required placeholder="Time">
+                  <option value="1" selected>09 am - 09:30 am</option>
+                  <option value="2">09:30 am - 10:00 am</option>
+                  <option value="2">10:00 am - 10:30 am</option>
+                  <option value="2">10:30 am - 11:00 am</option>
+                  <option value="2">11:00 am - 11:30 am</option>
+                  <option value="2">11:30 am - 12:00 pm</option>
+                  <option value="2">12:00 pm - 12:30 pm</option>
+                  <option value="2">12:30 pm - 01:00 pm</option>
+                  <option value="2">01:00 pm - 01:30 pm</option>
+                  <option value="2">01:30 pm - 02:00 pm</option>
+                  <option value="2">02:00 pm - 02:30 pm</option>
+                  <option value="2">02:30 pm - 03:00 pm</option>
+                  <option value="2">03:00 pm - 03:30 pm</option>
+                  <option value="2">03:30 pm - 04:00 pm</option>
+                  <option value="2">04:00 pm - 04:30 pm</option>
+                  <option value="2">04:30 pm - 05:00 pm</option>
+                </select>
+              </div>
+              <div class="col-12 d-none item-city">
+                <label class="form-label" for="city-area">Select area in <span id="selected-city"></span></label>
+                <div role="combobox" aria-owns="dropdown-locations"
+                  aria-haspopup="true" aria-expanded="false">
+                  <input class="form-control" id="city-area" type="text" required spellcheck="false"
+                    autocorrect="off" autocomplete="off" autocapitalize="off"
+                    aria-controls="dropdown-locations" aria-autocomplete="both" placeholder="Select area"
+                    aria-activedescendant="">
+                  <ul class="dropdown-locations" id="dropdown-locations" role="listbox" data-placeholder="Select a location"></ul>
+                </div>
+              </div>
+              <div class="col-12 d-none item-instructions">
+                <label class="form-label" for="instruction">Building name / Instructions</label>
+                <textarea required id="instruction" class="form-control" placeholder="Help us reach you quicker"></textarea>
+              </div>
+              <p class="text-center">We'll send the location after the completion of the form.</p>
+              <div class="col-auto mx-auto">
+                <button id="appointment_info" type="submit" class="btn btn-primary btn-continue px-5 py-2">
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="slide" id="slide-contact">
+            <div class="slide-header">
+              <h5>Please share your contact info</h5>
+            </div>
+            <div class="slide-body">
+              <form class="needs-validation row g-3 mb-3" novalidate onsubmit="return false">
+                <div class="col-md-6">
+                  <label class="form-label">First Name</label>
+                  <div class="input-group" id="first-name-label">
+                    <span class="input-group-text">
+                      <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0.749939C5.1084 0.749939 2.75 3.10834 2.75 5.99994C2.75 7.80756 3.67285 9.41302 5.07031 10.3593C2.39551 11.5078 0.5 14.162 0.5 17.2499H2C2 15.082 3.14551 13.1953 4.85938 12.1406C5.36328 13.3769 6.59082 14.2499 8 14.2499C9.40918 14.2499 10.6367 13.3769 11.1406 12.1406C12.8545 13.1953 14 15.082 14 17.2499H15.5C15.5 14.162 13.6045 11.5078 10.9297 10.3593C12.3271 9.41302 13.25 7.80756 13.25 5.99994C13.25 3.10834 10.8916 0.749939 8 0.749939ZM8 2.24994C10.0801 2.24994 11.75 3.91986 11.75 5.99994C11.75 8.08002 10.0801 9.74994 8 9.74994C5.91992 9.74994 4.25 8.08002 4.25 5.99994C4.25 3.91986 5.91992 2.24994 8 2.24994ZM8 11.2499C8.61523 11.2499 9.20117 11.3378 9.75781 11.5078C9.49707 12.2314 8.81738 12.7499 8 12.7499C7.18262 12.7499 6.50293 12.2314 6.24219 11.5078C6.79883 11.3378 7.38477 11.2499 8 11.2499Z"
+                          fill="#7990A6"></path>
+                      </svg>
+                    </span>
+                    <input type="text" id="seller_first_name" class="form-control" placeholder="Enter First Name" required aria-label="First Name" aria-describedby="first-name-label">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Last Name</label>
+                  <div class="input-group" id="last-name-label">
+                    <span class="input-group-text">
+                      <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0.749939C5.1084 0.749939 2.75 3.10834 2.75 5.99994C2.75 7.80756 3.67285 9.41302 5.07031 10.3593C2.39551 11.5078 0.5 14.162 0.5 17.2499H2C2 15.082 3.14551 13.1953 4.85938 12.1406C5.36328 13.3769 6.59082 14.2499 8 14.2499C9.40918 14.2499 10.6367 13.3769 11.1406 12.1406C12.8545 13.1953 14 15.082 14 17.2499H15.5C15.5 14.162 13.6045 11.5078 10.9297 10.3593C12.3271 9.41302 13.25 7.80756 13.25 5.99994C13.25 3.10834 10.8916 0.749939 8 0.749939ZM8 2.24994C10.0801 2.24994 11.75 3.91986 11.75 5.99994C11.75 8.08002 10.0801 9.74994 8 9.74994C5.91992 9.74994 4.25 8.08002 4.25 5.99994C4.25 3.91986 5.91992 2.24994 8 2.24994ZM8 11.2499C8.61523 11.2499 9.20117 11.3378 9.75781 11.5078C9.49707 12.2314 8.81738 12.7499 8 12.7499C7.18262 12.7499 6.50293 12.2314 6.24219 11.5078C6.79883 11.3378 7.38477 11.2499 8 11.2499Z"
+                          fill="#7990A6"></path>
+                      </svg>
+                    </span>
+                    <input type="text" id="seller_last_name" class="form-control" required placeholder="Enter Last Name" aria-label="Last Name" aria-describedby="last-name-label">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="email">Your email</label>
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <svg width="22" height="17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 511.894 511.894" style="enable-background:new 0 0 511.894 511.894;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M477.973,53.28H34.027C15.253,53.28,0,68.534,0,87.307v337.28c0,18.773,15.253,34.027,34.027,34.027h443.84    c18.773,0,34.027-15.253,34.027-34.027V87.307C512,68.534,496.747,53.28,477.973,53.28z M475.733,74.614L270.72,283.147    c-8.107,7.893-21.013,8-29.227,0.213L36.267,74.614H475.733z M21.333,422.667v-332.8l169.92,172.8L21.333,422.667z M36.907,437.28    l169.387-159.36l20.16,20.587c7.893,7.68,18.453,12.053,29.44,12.053c11.093,0,21.867-4.373,29.76-12.16l15.147-15.467    L474.667,437.28H36.907z M490.667,423.094L315.84,267.574L490.667,89.867V423.094z"/>
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                    <input class="form-control" placeholder="Enter email address" id="seller_email" type="email" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="phone">Phone</label>
+                  <div class="input-group" id="phone">
+                    <span class="input-group-text">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.41022 0.874939C4.08307 0.874939 3.76081 0.992126 3.49225 1.20697L3.45319 1.2265L3.43366 1.24603L1.48053 3.25775L1.50006 3.27728C0.897037 3.83392 0.71149 4.66644 0.972721 5.38666C0.975162 5.39154 0.970279 5.40131 0.972721 5.40619C1.50251 6.9223 2.85749 9.84955 5.50397 12.496C8.16022 15.1523 11.1265 16.4536 12.5938 17.0273H12.6133C13.3726 17.2812 14.1954 17.1005 14.7813 16.5976L16.754 14.6249C17.2715 14.1074 17.2715 13.2089 16.754 12.6913L14.2149 10.1523L14.1954 10.1132C13.6778 9.59564 12.7598 9.59564 12.2423 10.1132L10.9923 11.3632C10.5406 11.1459 9.46393 10.5893 8.43366 9.60541C7.41071 8.62885 6.88825 7.5058 6.69538 7.06635L7.94538 5.81635C8.47028 5.29144 8.48004 4.41742 7.92585 3.90228L7.94538 3.88275L7.88678 3.82416L5.38678 1.24603L5.36725 1.2265L5.32819 1.20697C5.05963 0.992126 4.73737 0.874939 4.41022 0.874939ZM4.41022 2.12494C4.45661 2.12494 4.50299 2.14691 4.54694 2.18353L7.04694 4.74213L7.10553 4.80072C7.10065 4.79584 7.14215 4.86176 7.06647 4.93744L5.50397 6.49994L5.211 6.77338L5.34772 7.164C5.34772 7.164 6.06549 9.08539 7.57428 10.5234L7.711 10.6406C9.16364 11.9662 10.8751 12.6913 10.8751 12.6913L11.2657 12.8671L13.1212 11.0117C13.2286 10.9042 13.209 10.9042 13.3165 11.0117L15.8751 13.5703C15.9825 13.6777 15.9825 13.6386 15.8751 13.746L13.961 15.6601C13.6729 15.9067 13.3677 15.9579 13.004 15.8359C11.588 15.2792 8.83649 14.0707 6.38288 11.6171C3.90973 9.14398 2.61823 6.33881 2.1446 4.9765C2.04938 4.7226 2.11774 4.34662 2.33991 4.15619L2.37897 4.11713L4.2735 2.18353C4.31745 2.14691 4.36383 2.12494 4.41022 2.12494Z" fill="#7990A6"></path>
+                      </svg>
+                    </span>
+                    <span class="input-group-text">
+                      +971
+                    </span>
+                    <input type="tel" required class="phoneNumber form-control" placeholder="Phone" id="phoneNumber" maxlength="9">
+                  </div>
+                </div>
+                <p class="text-center">Please give us your phone number so we can arrange a specialist visit for inspection &amp; photos. </p>
+                <div class="col-auto mx-auto">
+                  <button id="schedule_inspection" type="submit" class="btn btn-primary btn-continue px-5 py-2">
+                    Schedule Car Inspection
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="slide slide-last slide-thanks" id="slide-thanks">
+            <div class="main-content" style="max-height: 200px;overflow:hidden">
+              <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_atippmse.json" 
+              background="transparent" speed="2" style="width: 200px; height: 200px;margin: auto;" id="thanks-lottie"></lottie-player>
+            </div>
+            <div class="header">
+              <h2>THANK YOU!</h2>
+            </div>
+            <p class="main-content__body">For contacting us. <br> will be get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>`);
   // fill years
   years.forEach(year => {
     $("#car-years-list").prepend(`
@@ -2093,329 +2414,6 @@ $( document ).ready(function() {
     autoclose: true,
     format: "dd-mm-yyyy"
   });
-
-$("#carxchange").html(`
-  <div class="container">
-    <div class="tab-content">
-      <div class="progress-wrapper w-100 mb-4">
-        <div class="progress-info d-flex align-items-center justify-content-between" data-val="0">
-          <button class="btn p-0 back" id="btn-back">
-            <svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" baseProfile="tiny" id="Layer_1" x="0px" y="0px" width="42px" height="42px" viewBox="0 0 42 42" xml:space="preserve">
-              <polygon fill-rule="evenodd" points="27.066,1 7,21.068 26.568,40.637 31.502,35.704 16.865,21.068 32,5.933 "/>
-            </svg> Back
-          </button>
-        </div>
-        <div class="progress" style="height: 8px;">
-          <div class="progress-bar" role="progressbar" aria-label="Progress Bar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      </div>
-      <div class="slide-wrapper w-100">
-        <div class="slide slide-first active" id="slide-make">
-          <div class="slide-header">
-            <h5>Select your car make</h5>
-            <div class="search-field">
-              <input id="search-car" type="search" placeholder="Search for car make">
-              <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
-                <title id="title">Search Icon</title>
-                <desc id="desc">A magnifying glass icon.</desc>
-                <g class="search-path" fill="none" stroke="#848F91">
-                  <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-                  <circle cx="8" cy="8" r="7" />
-                </g>
-              </svg>
-              <ul class="makes-drop-down" id="search-car-dropdown"></ul>
-            </div>
-          </div>
-          <div class="slide-body">
-            <div class="radio-wrapper" id="cars-list">
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Toyota" id="toyota">
-                <label for="toyota">
-                  <img src="dist/imgs/toyota.svg" alt="Toyota">
-                </label>
-              </div>
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Nissan" id="nissan">
-                <label for="nissan">
-                  <img src="dist/imgs/nissan.png" alt="Nissan">
-                </label>
-              </div>
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Ford" id="ford">
-                <label for="ford">
-                  <img src="dist/imgs/ford.png" alt="Ford">
-                </label>
-              </div>
-
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="BMW" id="bmw">
-                <label for="bmw">
-                  <img src="dist/imgs/bmw.svg" alt="BMW">
-                </label>
-              </div>
-
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Honda" id="honda">
-                <label for="honda">
-                  <img src="dist/imgs/honda.png" alt="Honda">
-                </label>
-              </div>
-
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Mitsubishi" id="mitsubishi">
-                <label for="mitsubishi">
-                  <img src="dist/imgs/mitsubishi.svg" alt="Mitsubishi">
-                </label>
-              </div>
-
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Volkswagen" id="volkswagen">
-                <label for="volkswagen">
-                  <img src="dist/imgs/volkswagen.png" alt="Volkswagen">
-                </label>
-              </div>
-
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Audi" id="audi">
-                <label for="audi">
-                  <img src="dist/imgs/audi.png" alt="Audi">
-                </label>
-              </div>
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="Mercedes" id="mercedes">
-                <label for="mercedes">
-                  <img src="dist/imgs/mercedes.svg" alt="Mercedes">
-                </label>
-              </div>
-              <div class="label-wrapper">
-                <input required type="radio" name="car" value="other-car" id="other-car" class="other-car">
-                <label for="other-car">
-                  <span class="text">Other make</span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide" id="slide-model">
-          <div class="slide-header">
-            <h5>Choose from popular models</h5>
-            <div class="search-field">
-              <input id="search-model" type="search" placeholder="Search for car model">
-              <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
-                <title id="title">Search Icon</title>
-                <desc id="desc">A magnifying glass icon.</desc>
-                <g class="search-path" fill="none" stroke="#848F91">
-                  <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-                  <circle cx="8" cy="8" r="7" />
-                </g>
-              </svg>
-              <ul class="makes-drop-down" id="search-model-dropdown"></ul>
-            </div>
-          </div>
-          <div class="slide-body">
-            <div class="radio-wrapper" id="car-models-list"></div>
-          </div>
-        </div>
-        <div class="slide" id="slide-year">
-          <div class="slide-header">
-            <h5>Select year</h5>
-          </div>
-          <div class="radio-wrapper" id="car-years-list"></div>
-        </div>
-        <div class="slide" id="slide-specs">
-          <div class="slide-header">
-            <h5>Select specifications</h5>
-          </div>
-          <div class="radio-wrapper radio-column" id="car-specs-list"></div>
-        </div>
-        <div class="slide" id="slide-city">
-          <div class="slide-header">
-            <h5>Which city is the car in?</h5>
-          </div>
-          <div class="radio-wrapper radio-column" id="cities-list"></div>
-        </div>
-        <div class="slide slide-mileage" id="slide-mileage">
-          <div class="slider-holder mb-5 py-4">
-            <div class="title-row">
-              <span>Mileage (approx)</span>
-              <span id="range-miles">25,000 Kilometers</span>
-            </div>
-            <div class="range-slider" data-id="range-miles">
-              <input class="range-slider__range" type="range" value="25000" min="0" max="350000"
-                step="1000">
-            </div>
-            <div class="labels-holder">
-              <span id="mileage-min-label" data-label="0 Kilometer" data-label-sm="0 Kilometer"></span>
-              <span id="mileage-max-label" data-label="350,000 Kilometers" data-label-sm="+350k Kilometers"></span>
-            </div>
-          </div>
-          <div class="col-auto mx-auto">
-            <button id="continue-button" type="button" class="btn btn-primary btn-continue px-5 py-2">
-              Continue
-            </button>
-          </div>
-        </div>
-        <div class="slide" id="slide-paints">
-          <div class="slide-header">
-            <h5>Select paint</h5>
-          </div>
-          <div class="radio-wrapper radio-column" id="car-paints-list"></div>
-        </div>
-        <div class="slide slide-appointment" id="slide-appointment">
-          <div class="slide-header">
-            <h5>When should we inspect the car?</h5>
-          </div>
-          <div class="radio-wrapper no-radio" id="visit-type">
-            <div class="label-wrapper">
-              <input type="radio" name="visit-type" value="branch" id="branch" class="visit-type-model" checked>
-              <label for="branch">
-                <h5>Branches</h5>
-                <span>Dubai</span>
-              </label>
-            </div>
-            <div class="label-wrapper">
-              <input type="radio" name="visit-type" value="home-service" id="home-service" class="visit-type-model">
-              <label for="home-service">
-                <h5>Home Service</h5>
-                <span>Come to my location</span>
-              </label>
-            </div>
-          </div>
-          <form class="needs-validation row g-3 mt-2" novalidate onsubmit="return false">
-            <div class="col-md-6">
-              <label class="form-label" for="datepicker">Pick a date &amp; time</label>
-              <input type="text" required="required" placeholder="MM-DD-YYYY" id="datepicker" autocomplete="off" class="form-control"/>
-            </div>
-            <div class="col-md-6 align-self-end">
-              <select class="form-control" id="slot_time" required placeholder="Time">
-                <option value="1" selected>09 am - 09:30 am</option>
-                <option value="2">09:30 am - 10:00 am</option>
-                <option value="2">10:00 am - 10:30 am</option>
-                <option value="2">10:30 am - 11:00 am</option>
-                <option value="2">11:00 am - 11:30 am</option>
-                <option value="2">11:30 am - 12:00 pm</option>
-                <option value="2">12:00 pm - 12:30 pm</option>
-                <option value="2">12:30 pm - 01:00 pm</option>
-                <option value="2">01:00 pm - 01:30 pm</option>
-                <option value="2">01:30 pm - 02:00 pm</option>
-                <option value="2">02:00 pm - 02:30 pm</option>
-                <option value="2">02:30 pm - 03:00 pm</option>
-                <option value="2">03:00 pm - 03:30 pm</option>
-                <option value="2">03:30 pm - 04:00 pm</option>
-                <option value="2">04:00 pm - 04:30 pm</option>
-                <option value="2">04:30 pm - 05:00 pm</option>
-              </select>
-            </div>
-            <div class="col-12 d-none item-city">
-              <label class="form-label" for="city-area">Select area in <span id="selected-city"></span></label>
-              <div role="combobox" aria-owns="dropdown-locations"
-                aria-haspopup="true" aria-expanded="false">
-                <input class="form-control" id="city-area" type="text" required spellcheck="false"
-                  autocorrect="off" autocomplete="off" autocapitalize="off"
-                  aria-controls="dropdown-locations" aria-autocomplete="both" placeholder="Select area"
-                  aria-activedescendant="">
-                <ul class="dropdown-locations" id="dropdown-locations" role="listbox" data-placeholder="Select a location"></ul>
-              </div>
-            </div>
-            <div class="col-12 d-none item-instructions">
-              <label class="form-label" for="instruction">Building name / Instructions</label>
-              <textarea required id="instruction" class="form-control" placeholder="Help us reach you quicker"></textarea>
-            </div>
-            <p class="text-center">We'll send the location after the completion of the form.</p>
-            <div class="col-auto mx-auto">
-              <button id="appointment_info" type="submit" class="btn btn-primary btn-continue px-5 py-2">
-                Continue
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="slide" id="slide-contact">
-          <div class="slide-header">
-            <h5>Please share your contact info</h5>
-          </div>
-          <div class="slide-body">
-            <form class="needs-validation row g-3 mb-3" novalidate onsubmit="return false">
-              <div class="col-md-6">
-                <label class="form-label">First Name</label>
-                <div class="input-group" id="first-name-label">
-                  <span class="input-group-text">
-                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M8 0.749939C5.1084 0.749939 2.75 3.10834 2.75 5.99994C2.75 7.80756 3.67285 9.41302 5.07031 10.3593C2.39551 11.5078 0.5 14.162 0.5 17.2499H2C2 15.082 3.14551 13.1953 4.85938 12.1406C5.36328 13.3769 6.59082 14.2499 8 14.2499C9.40918 14.2499 10.6367 13.3769 11.1406 12.1406C12.8545 13.1953 14 15.082 14 17.2499H15.5C15.5 14.162 13.6045 11.5078 10.9297 10.3593C12.3271 9.41302 13.25 7.80756 13.25 5.99994C13.25 3.10834 10.8916 0.749939 8 0.749939ZM8 2.24994C10.0801 2.24994 11.75 3.91986 11.75 5.99994C11.75 8.08002 10.0801 9.74994 8 9.74994C5.91992 9.74994 4.25 8.08002 4.25 5.99994C4.25 3.91986 5.91992 2.24994 8 2.24994ZM8 11.2499C8.61523 11.2499 9.20117 11.3378 9.75781 11.5078C9.49707 12.2314 8.81738 12.7499 8 12.7499C7.18262 12.7499 6.50293 12.2314 6.24219 11.5078C6.79883 11.3378 7.38477 11.2499 8 11.2499Z"
-                        fill="#7990A6"></path>
-                    </svg>
-                  </span>
-                  <input type="text" id="seller_first_name" class="form-control" placeholder="Enter First Name" required aria-label="First Name" aria-describedby="first-name-label">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Last Name</label>
-                <div class="input-group" id="last-name-label">
-                  <span class="input-group-text">
-                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M8 0.749939C5.1084 0.749939 2.75 3.10834 2.75 5.99994C2.75 7.80756 3.67285 9.41302 5.07031 10.3593C2.39551 11.5078 0.5 14.162 0.5 17.2499H2C2 15.082 3.14551 13.1953 4.85938 12.1406C5.36328 13.3769 6.59082 14.2499 8 14.2499C9.40918 14.2499 10.6367 13.3769 11.1406 12.1406C12.8545 13.1953 14 15.082 14 17.2499H15.5C15.5 14.162 13.6045 11.5078 10.9297 10.3593C12.3271 9.41302 13.25 7.80756 13.25 5.99994C13.25 3.10834 10.8916 0.749939 8 0.749939ZM8 2.24994C10.0801 2.24994 11.75 3.91986 11.75 5.99994C11.75 8.08002 10.0801 9.74994 8 9.74994C5.91992 9.74994 4.25 8.08002 4.25 5.99994C4.25 3.91986 5.91992 2.24994 8 2.24994ZM8 11.2499C8.61523 11.2499 9.20117 11.3378 9.75781 11.5078C9.49707 12.2314 8.81738 12.7499 8 12.7499C7.18262 12.7499 6.50293 12.2314 6.24219 11.5078C6.79883 11.3378 7.38477 11.2499 8 11.2499Z"
-                        fill="#7990A6"></path>
-                    </svg>
-                  </span>
-                  <input type="text" id="seller_last_name" class="form-control" required placeholder="Enter Last Name" aria-label="Last Name" aria-describedby="last-name-label">
-                </div>
-              </div>
-              <div class="col-12">
-                <label class="form-label" for="email">Your email</label>
-                <div class="input-group">
-                  <span class="input-group-text">
-                    <svg width="22" height="17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 511.894 511.894" style="enable-background:new 0 0 511.894 511.894;" xml:space="preserve">
-                      <g>
-                        <g>
-                          <path d="M477.973,53.28H34.027C15.253,53.28,0,68.534,0,87.307v337.28c0,18.773,15.253,34.027,34.027,34.027h443.84    c18.773,0,34.027-15.253,34.027-34.027V87.307C512,68.534,496.747,53.28,477.973,53.28z M475.733,74.614L270.72,283.147    c-8.107,7.893-21.013,8-29.227,0.213L36.267,74.614H475.733z M21.333,422.667v-332.8l169.92,172.8L21.333,422.667z M36.907,437.28    l169.387-159.36l20.16,20.587c7.893,7.68,18.453,12.053,29.44,12.053c11.093,0,21.867-4.373,29.76-12.16l15.147-15.467    L474.667,437.28H36.907z M490.667,423.094L315.84,267.574L490.667,89.867V423.094z"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </span>
-                  <input class="form-control" placeholder="Enter email address" id="seller_email" type="email" required>
-                </div>
-              </div>
-              <div class="col-12">
-                <label class="form-label" for="phone">Phone</label>
-                <div class="input-group" id="phone">
-                  <span class="input-group-text">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.41022 0.874939C4.08307 0.874939 3.76081 0.992126 3.49225 1.20697L3.45319 1.2265L3.43366 1.24603L1.48053 3.25775L1.50006 3.27728C0.897037 3.83392 0.71149 4.66644 0.972721 5.38666C0.975162 5.39154 0.970279 5.40131 0.972721 5.40619C1.50251 6.9223 2.85749 9.84955 5.50397 12.496C8.16022 15.1523 11.1265 16.4536 12.5938 17.0273H12.6133C13.3726 17.2812 14.1954 17.1005 14.7813 16.5976L16.754 14.6249C17.2715 14.1074 17.2715 13.2089 16.754 12.6913L14.2149 10.1523L14.1954 10.1132C13.6778 9.59564 12.7598 9.59564 12.2423 10.1132L10.9923 11.3632C10.5406 11.1459 9.46393 10.5893 8.43366 9.60541C7.41071 8.62885 6.88825 7.5058 6.69538 7.06635L7.94538 5.81635C8.47028 5.29144 8.48004 4.41742 7.92585 3.90228L7.94538 3.88275L7.88678 3.82416L5.38678 1.24603L5.36725 1.2265L5.32819 1.20697C5.05963 0.992126 4.73737 0.874939 4.41022 0.874939ZM4.41022 2.12494C4.45661 2.12494 4.50299 2.14691 4.54694 2.18353L7.04694 4.74213L7.10553 4.80072C7.10065 4.79584 7.14215 4.86176 7.06647 4.93744L5.50397 6.49994L5.211 6.77338L5.34772 7.164C5.34772 7.164 6.06549 9.08539 7.57428 10.5234L7.711 10.6406C9.16364 11.9662 10.8751 12.6913 10.8751 12.6913L11.2657 12.8671L13.1212 11.0117C13.2286 10.9042 13.209 10.9042 13.3165 11.0117L15.8751 13.5703C15.9825 13.6777 15.9825 13.6386 15.8751 13.746L13.961 15.6601C13.6729 15.9067 13.3677 15.9579 13.004 15.8359C11.588 15.2792 8.83649 14.0707 6.38288 11.6171C3.90973 9.14398 2.61823 6.33881 2.1446 4.9765C2.04938 4.7226 2.11774 4.34662 2.33991 4.15619L2.37897 4.11713L4.2735 2.18353C4.31745 2.14691 4.36383 2.12494 4.41022 2.12494Z" fill="#7990A6"></path>
-                    </svg>
-                  </span>
-                  <span class="input-group-text">
-                    +971
-                  </span>
-                  <input type="tel" required class="phoneNumber form-control" placeholder="Phone" id="phoneNumber" maxlength="9">
-                </div>
-              </div>
-              <p class="text-center">Please give us your phone number so we can arrange a specialist visit for inspection &amp; photos. </p>
-              <div class="col-auto mx-auto">
-                <button id="schedule_inspection" type="submit" class="btn btn-primary btn-continue px-5 py-2">
-                  Schedule Car Inspection
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="slide slide-last slide-thanks" id="slide-thanks">
-          <div class="main-content" style="max-height: 200px;overflow:hidden">
-            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_atippmse.json" 
-            background="transparent" speed="2" style="width: 200px; height: 200px;margin: auto;" id="thanks-lottie"></lottie-player>
-          </div>
-          <div class="header">
-            <h2>THANK YOU!</h2>
-          </div>
-          <p class="main-content__body">For contacting us. <br> will be get back to you soon.</p>
-        </div>
-      </div>
-    </div>
-  </div>`);
 
   const nextSlide = () => {
     if (animating) return false;
