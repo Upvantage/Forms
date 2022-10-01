@@ -2391,6 +2391,12 @@ $( document ).ready(function() {
     </div>`);
   });
 
+  const params = new URLSearchParams(window.location.search);
+  if(params.has('car')) {
+    setTimeout(() => {
+      document.getElementById(params.get('car')).click();
+    }, 10);
+  }
 
   var forms = document.querySelectorAll('.needs-validation')
 
