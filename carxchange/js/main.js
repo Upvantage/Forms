@@ -1429,7 +1429,8 @@ $( document ).ready(function() {
   paints = [
     'Original Paint',
     'Partial paint',
-    'Fully repainted'
+    'Fully repainted',
+    'I don\'t know'
   ],
   cities = [
     {
@@ -2169,7 +2170,7 @@ $( document ).ready(function() {
             <div class="radio-wrapper radio-column" id="cities-list"></div>
           </div>
           <div class="slide slide-mileage" id="slide-mileage">
-            <div class="slider-holder mb-5 py-4">
+            <div class="slider-holder mb-3 mb-md-4 py-4">
               <div class="title-row">
                 <span>Mileage (approx)</span>
                 <span id="range-miles">25,000 Kilometers</span>
@@ -2391,6 +2392,12 @@ $( document ).ready(function() {
     </div>`);
   });
 
+  const params = new URLSearchParams(window.location.search);
+  if(params.has('car')) {
+    setTimeout(() => {
+      document.getElementById(params.get('car')).click();
+    }, 10);
+  }
 
   var forms = document.querySelectorAll('.needs-validation')
 
