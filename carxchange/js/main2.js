@@ -2219,7 +2219,7 @@ $( document ).ready(function() {
             <form class="needs-validation row g-3 mt-2" novalidate onsubmit="return false">
               <div class="col-md-6">
                 <label class="form-label" for="datepicker">Pick a date &amp; time</label>
-                <input type="text" required="required" placeholder="MM-DD-YYYY" id="datepicker" autocomplete="off" class="form-control"/>
+                <input type="text" required="required" placeholder="MM-DD-YYYY" id="datepicker" readonly autocomplete="off" class="form-control"/>
               </div>
               <div class="col-md-6 align-self-end">
                 <select class="form-control" id="slot_time" required placeholder="Time">
@@ -2413,14 +2413,17 @@ $( document ).ready(function() {
     }, false)
   });
 
-  $('#datepicker').datepicker({
-    'templates': {
-      leftArrow: '<i class="arrow-left"></i>',
-      rightArrow: '<i class="arrow-right"></i>'
-    },
-    autoclose: true,
-    format: "dd-mm-yyyy"
-  });
+  if($("#datepicker").length > 0) {
+    $('#datepicker').datepicker({
+      'templates': {
+        leftArrow: '<i class="arrow-left"></i>',
+        rightArrow: '<i class="arrow-right"></i>'
+      },
+      autoclose: true,
+      format: "dd-mm-yyyy"
+    });
+    $('#datepicker').datepicker('setDate', new Date()).datepicker('fill')
+  }
 
   const nextSlide = () => {
     if (animating) return false;
