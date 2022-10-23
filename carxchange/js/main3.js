@@ -2223,7 +2223,7 @@ $( document ).ready(function() {
               </div>
               <div class="col-md-6 align-self-end">
                 <select class="form-control" id="slot_time" required placeholder="Time">
-                  <option value="1" selected>09 am - 09:30 am</option>
+                  <option value="1" selected>09:00 am - 09:30 am</option>
                   <option value="2">09:30 am - 10:00 am</option>
                   <option value="2">10:00 am - 10:30 am</option>
                   <option value="2">10:30 am - 11:00 am</option>
