@@ -2490,7 +2490,26 @@ $( document ).ready(function() {
     $(this).parent().parent().find('input').val($(this).html());
     $(this).parent().removeClass("opened")
     $(".carxchange").removeClass("search-opened");
+    if($(this).parent().is($("#search-car-dropdown"))) {
+      if($(`#cars-list input[type='radio'][value='${$(this).html()}']`).length > 0 ) {
+        $(`#cars-list input[type='radio'][value='${$(this).html()}']`).prop("checked", true);
+      } else {
+        $("#other-car").prop("checked", true);
+      }
+    } else {
+      if($(`#car-models-list input[type='radio'][value='${$(this).html()}']`).length > 0 ) {
+        $(`#car-models-list input[type='radio'][value='${$(this).html()}']`).prop("checked", true);
+      } else {
+        $("#other-model").prop("checked", true);
+      }
+    }
   });
+
+  // empty the search when check input
+  $('body').on("click", "#cars-list input[type='radio'], #car-models-list input[type='radio']", function() {
+    $("#search-car, #search-model").val('');
+    $(".makes-drop-down li").show();
+  })
 
   // open dropdown on click
   $("#search-car, #search-model").on("click", function(e) {
@@ -2513,7 +2532,6 @@ $( document ).ready(function() {
   $(window).on("click", function(){
     $(".makes-drop-down").removeClass("opened");
     $(".carxchange").removeClass("search-opened");
-    $("#other-car, #other-model").prop("checked", false);
   });
 
   // open dropdown when click on other car
@@ -2741,8 +2759,8 @@ $( document ).ready(function() {
       });
       $this.html("Submitting...").prop("disabled", true)
       let data = {
-        make: $("#cars-list input[type='radio']:checked").val(),
-        model: $("#car-models-list input[type='radio']:checked").val(),
+        make: ($("#cars-list input[type='radio']:checked").val() !== 'other-car' && $("#cars-list input[type='radio']:checked").val() !== undefined) ? $("#cars-list input[type='radio']:checked").val() : $("#search-car").val() ,
+        model: ($("#cars-models-list input[type='radio']:checked").val() !== 'other-car' && $("#cars-models-list input[type='radio']:checked").val() !== undefined) ? $("#cars-models-list input[type='radio']:checked").val() : $("#search-car").val() ,
         year: $("#car-years-list input[type='radio']:checked").val(),
         specifications: $("#car-specs-list input[type='radio']:checked").val(),
         mileage: $("[data-id='range-miles'] input").val(),
