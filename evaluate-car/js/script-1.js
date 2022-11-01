@@ -2759,8 +2759,8 @@ $( document ).ready(function() {
       });
       $this.html("Submitting...").prop("disabled", true)
       let data = {
-        make: ($("#cars-list input[type='radio']:checked").val() !== 'other-car' && $("#cars-list input[type='radio']:checked").val() !== undefined) ? $("#cars-list input[type='radio']:checked").val() : $("#search-car").val() ,
-        model: ($("#cars-models-list input[type='radio']:checked").val() !== 'other-car' && $("#cars-models-list input[type='radio']:checked").val() !== undefined) ? $("#cars-models-list input[type='radio']:checked").val() : $("#search-car").val() ,
+        make: ($("#cars-list input[type='radio']:checked").val() !== 'other-car' && $("#cars-list input[type='radio']:checked").val() !== undefined) ? $("#cars-list input[type='radio']:checked").val() : $("#search-car").val(),
+        model: ($("#car-models-list input[type='radio']:checked").val() !== 'other-model' && $("#car-models-list input[type='radio']:checked").val() !== undefined) ? $("#car-models-list input[type='radio']:checked").val() : $("#search-model").val(),
         year: $("#car-years-list input[type='radio']:checked").val(),
         specifications: $("#car-specs-list input[type='radio']:checked").val(),
         mileage: $("[data-id='range-miles'] input").val(),
