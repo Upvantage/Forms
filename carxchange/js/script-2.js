@@ -2841,7 +2841,7 @@ $( document ).ready(function() {
         specifications: $("#car-specs-list input[type='radio']:checked").val(),
         city: $("#cities-list input[type='radio']:checked").val(),
         mileage: $("[data-id='range-miles'] input").val(),
-        price: $("[data-id='range-price'] input").val(), 
+        paint: $("#car-paints-list input[type='radio']:checked").val(), 
         date: $("#datepicker").val(),
         time: $("#slot_time option:selected").html(),
         visitType: $("#visit-type input[type='radio']:checked").val(),
