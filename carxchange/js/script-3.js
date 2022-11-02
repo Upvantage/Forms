@@ -2516,11 +2516,14 @@ $( document ).ready(function() {
   });
 
   // empty the search when check input
-  $('body').on("click", "#cars-list input[type='radio'], #car-models-list input[type='radio']", function() {
-    $("#search-car, #search-model").val('');
+  $('body').on("click", "#cars-list input[type='radio']", function() {
+    $("#search-car").val('');
+    $(".makes-drop-down li").show();
+  });
+  $('body').on("click", "#car-models-list input[type='radio']", function() {
+    $("#search-model").val('');
     $(".makes-drop-down li").show();
   })
-
   // open dropdown on click
   $("#search-car, #search-model").on("click", function(e) {
     e.stopPropagation();
