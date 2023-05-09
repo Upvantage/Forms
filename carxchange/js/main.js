@@ -1940,6 +1940,7 @@ $(document).ready(function () {
                   <option value="2">05:30 pm - 06:00 pm</option>
                   <option value="2">06:00 pm - 06:30 pm</option>
                   <option value="2">06:30 pm - 07:00 pm</option>
+                  <option value="2">07:00 pm - 07:30 pm</option>
                 </select>
               </div>
               <div class="col-12 d-none item-city">
