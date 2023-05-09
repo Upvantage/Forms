@@ -2043,10 +2043,7 @@ $(document).ready(function () {
               <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_atippmse.json" 
               background="transparent" speed="2" style="width: 200px; height: 200px;margin: auto;" id="thanks-lottie"></lottie-player>
             </div>
-            <div class="header">
-              <h2>THANK YOU!</h2>
-            </div>
-            <p class="main-content__body">For contacting us. <br> will be get back to you soon.</p>
+            <p class="main-content__body">Thanks for booking an appointment with us! <br> Our team will call you shortly and confirm the appointment with you</p>
           </div>
         </div>
       </form>
